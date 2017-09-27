@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import csv
-import sys
 import logging
 import mysql.connector
 
@@ -14,7 +13,8 @@ years = [
         2016,
         ]
 
-# From https://github.com/peterhurford/ea-data/blob/e2155246f2919b9f94c2c169423bf29b05a4aa16/models/2017/easurvey/variable_names.R#L62-L109
+# From
+# https://github.com/peterhurford/ea-data/blob/e2155246f2919b9f94c2c169423bf29b05a4aa16/models/2017/easurvey/variable_names.R#L62-L109
 charities = [
         {"name": "Rethink Charity", "var": "donate_RC"},
         {"name": "80000 Hours", "var": "donate_80K"},
@@ -32,7 +32,8 @@ charities = [
         {"name": "GiveDirectly", "var": "donate_gd"},
         {"name": "GiveWell", "var": "donate_gw"},
         {"name": "The Good Food Institute", "var": "donate_gf"},
-        {"name": "Machine Intelligence Research Institute", "var": "donate_miri"},
+        {"name": "Machine Intelligence Research Institute",
+            "var": "donate_miri"},
         {"name": "Malaria Consortium", "var": "donate_mc"},
         {"name": "Mercy For Animals", "var": "donate_mfa"},
         {"name": "Schistosomiasis Control Initiative", "var": "donate_sci"},
@@ -94,7 +95,7 @@ with open("2017-ea-survey-sharable-data.csv", newline='') as f:
             for year in years:
                 donation_var = charity['var'] + "_" + str(year)
                 if (donation_var in row and row[donation_var] and
-                    row[donation_var] != "NA all"):
+                        row[donation_var] != "NA all"):
                     amount = float(row[donation_var].replace(",", ""))
                 else:
                     amount = 0
@@ -108,7 +109,8 @@ with open("2017-ea-survey-sharable-data.csv", newline='') as f:
                         mysql_quote("year"),
                         mysql_quote("Effective Altruism Survey"),
                         mysql_quote(causes[charity['name']]),
-                        mysql_quote("https://github.com/peterhurford/ea-data/"),
+                        mysql_quote(
+                            "https://github.com/peterhurford/ea-data/"),
                         "NULL",
                         "NULL",
                         "NULL",
