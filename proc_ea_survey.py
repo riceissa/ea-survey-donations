@@ -67,6 +67,9 @@ causes['Future of Humanity Institute'] = "Existential risk"
 causes['Effective Altruism Foundation'] = "Effective altruism"
 causes['Foundational Research Institute'] = "Effective altruism"
 causes['Malaria Consortium'] = "Global health"
+causes['80,000 Hours'] = "FIXME"
+causes['The Life You Can Save'] = "FIXME"
+causes['Charity Science'] = "FIXME"
 
 cursor.close()
 cnx.close()
@@ -96,7 +99,7 @@ with open("2017-ea-survey-sharable-data.csv", newline='') as f:
     first = True
     for row in reader:
         if row['full_name'] in existing_donors:
-            logging.info(row['full_name'], "is already in the database")
+            logging.info("%s is already in the database", row['full_name'])
         for charity in charities:
             for year in years:
                 donation_var = charity['var'] + "_" + str(year)
@@ -125,5 +128,5 @@ with open("2017-ea-survey-sharable-data.csv", newline='') as f:
                         "NULL",
                     ]) + ")")
                     first = False
-                elif amount:
-                    print(row['full_name'], file=sys.stderr)
+
+print(";")
