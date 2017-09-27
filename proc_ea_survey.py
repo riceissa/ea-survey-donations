@@ -61,15 +61,6 @@ cursor.execute("""select donee,cause_area from donees
                where cause_area is not NULL""")
 causes = {name: cause for name, cause in cursor}
 
-# TODO add these donees to the donees table
-causes['Sentience Politics'] = "Animal welfare"
-causes['Future of Humanity Institute'] = "Existential risk"
-causes['Effective Altruism Foundation'] = "Effective altruism"
-causes['Foundational Research Institute'] = "Effective altruism"
-causes['Malaria Consortium'] = "Global health"
-causes['The Life You Can Save'] = "FIXME"
-causes['Charity Science'] = "FIXME"
-
 cursor.close()
 cnx.close()
 
@@ -115,9 +106,9 @@ with open("2017-ea-survey-sharable-data.csv", newline='') as f:
                         "NULL",
                         mysql_quote(str(year) + "-01-01"),
                         mysql_quote("year"),
-                        "NULL",
+                        mysql_quote("Effective Altruism Survey"),
                         mysql_quote(causes[charity['name']]),
-                        "NULL",
+                        mysql_quote("https://github.com/peterhurford/ea-data/"),
                         "NULL",
                         "NULL",
                         "NULL",
