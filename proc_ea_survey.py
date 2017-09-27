@@ -17,7 +17,7 @@ years = [
 # From https://github.com/peterhurford/ea-data/blob/e2155246f2919b9f94c2c169423bf29b05a4aa16/models/2017/easurvey/variable_names.R#L62-L109
 charities = [
         {"name": "Rethink Charity", "var": "donate_RC"},
-        {"name": "80,000 Hours", "var": "donate_80K"},
+        {"name": "80000 Hours", "var": "donate_80K"},
         {"name": "Against Malaria Foundation", "var": "donate_amf"},
         {"name": "Animal Charity Evaluators", "var": "donate_ace"},
         {"name": "Center for Applied Rationality", "var": "donate_cfar"},
@@ -67,7 +67,6 @@ causes['Future of Humanity Institute'] = "Existential risk"
 causes['Effective Altruism Foundation'] = "Effective altruism"
 causes['Foundational Research Institute'] = "Effective altruism"
 causes['Malaria Consortium'] = "Global health"
-causes['80,000 Hours'] = "FIXME"
 causes['The Life You Can Save'] = "FIXME"
 causes['Charity Science'] = "FIXME"
 
