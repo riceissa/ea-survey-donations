@@ -94,6 +94,14 @@ with open("2017-ea-survey-sharable-data.csv", newline='') as f:
         for charity in charities:
             for year in years:
                 donation_var = charity['var'] + "_" + str(year)
+                # Flag values that cannot be converted to float
+                if donation_var in row and row[donation_var]:
+                    try:
+                        float(row[donation_var])
+                    except ValueError as e:
+                        logging.info("%s: for %s, for var %s, the value is %s",
+                                     e, row['full_name'], donation_var,
+                                     row[donation_var])
                 if (donation_var in row and row[donation_var] and
                         row[donation_var] != "NA all"):
                     amount = float(row[donation_var].replace(",", ""))
