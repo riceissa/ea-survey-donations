@@ -89,6 +89,9 @@ with open("2017-ea-survey-sharable-data.csv", newline='') as f:
     reader = csv.DictReader(f)
     first = True
     for row in reader:
+        logging.info("Permission for %s: %s, %s, %s", row['full_name'],
+                     row['can_share_2015_donations'],
+                     row['can_share_2016_donations'], row['can_share'])
         if row['full_name'] in existing_donors:
             logging.info("%s is already in the database", row['full_name'])
         for charity in charities:
