@@ -93,9 +93,10 @@ with open("2017-ea-survey-sharable-data.csv", newline='') as f:
             logging.info("%s is already in the database", row['full_name'])
         for charity in charities:
             for year in years:
-                donation_var = charity['var'] + "_" + str(year)
+                donation_var = charity['var'] + "_" + str(year) + "_c"
                 # Flag values that cannot be converted to float
-                if donation_var in row and row[donation_var]:
+                if (donation_var in row and row[donation_var] and
+                        row[donation_var] != "NA"):
                     try:
                         float(row[donation_var])
                     except ValueError as e:
@@ -103,7 +104,7 @@ with open("2017-ea-survey-sharable-data.csv", newline='') as f:
                                      e, row['full_name'], donation_var,
                                      row[donation_var])
                 if (donation_var in row and row[donation_var] and
-                        row[donation_var] != "NA all"):
+                        row[donation_var] != "NA"):
                     amount = float(row[donation_var].replace(",", ""))
                 else:
                     amount = 0
