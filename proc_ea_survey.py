@@ -49,6 +49,7 @@ ignored_donors = {
         "Peter Hurford",
         "Michael Dickens",
         "Patrick Brinich-Langlois",
+        "Gordon Irlam"
         }
 
 
