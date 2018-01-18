@@ -135,7 +135,7 @@ with open("2017-ea-survey-sharable-data.csv", newline='') as f:
                         str(float(row[donation_var[:-len("_c")]])),  # amount original
                         mysql_quote(row['currency']),  # original currency
                         mysql_quote("2017-08-05"),
-                        mysql_quote("Peter Hurford"),
+                        mysql_quote("Fixer.io"),
                     ]) + ")")
                     first = False
 
