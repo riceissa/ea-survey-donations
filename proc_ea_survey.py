@@ -50,7 +50,8 @@ ignored_donors = {
         "Michael Dickens",
         "Patrick Brinich-Langlois",
         "Gordon Irlam",
-        "Robert Yaman" # We got data for this donor from the EA Survey but are augmenting it with outside sources
+        "Robert Yaman",  # We got data for this donor from the EA Survey but are augmenting it with outside sources
+        "NA",
         }
 
 
