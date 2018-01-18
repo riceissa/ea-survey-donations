@@ -49,7 +49,8 @@ ignored_donors = {
         "Peter Hurford",
         "Michael Dickens",
         "Patrick Brinich-Langlois",
-        "Gordon Irlam"
+        "Gordon Irlam",
+        "Robert Yaman" # We got data for this donor from the EA Survey but are augmenting it with outside sources
         }
 
 
